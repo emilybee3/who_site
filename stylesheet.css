@@ -1,0 +1,60 @@
+.tardis {
+
+}
+
+#nav {
+    display: none;
+}
+
+.tardis:hover #nav {
+    display:block;
+    z-index: 100;
+}
+
+.perspective
+{
+background: url("static/tardis_background.png");            
+background-repeat: no-repeat;
+            background-position: center center;
+            position: relative;
+            display: inline;
+            float: left;
+            width: 403px;
+            height: 762px;
+            margin: 20px;
+            margin-left: 0px;
+            -webkit-perspective: 450;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+        
+.thumb
+    {
+            background: url("static/door.png");
+            background-repeat: no-repeat;
+            /*background-position: center center;*/
+            margin-left: 65px;
+            margin-top:180px;
+            width: 403px;
+            height: 762px;
+            position: absolute;
+            box-sizing: border-box;
+            /*border-radius: 3px;*/
+            box-shadow: 0 0 0 10px rgba(255, 255, 255, .0) inset;
+            transition: 1s transform linear;
+            transform-origin: left;
+            cursor: pointer;
+        }
+        
+.thumbOpened {
+    transform: rotateY(90deg);
+    transform-origin: 8px;
+    transition: .5s linear;
+}
+
+@keyframes go {
+  100%{
+    opacity:1;
+    transform:rotateY(0deg);
+  }
+}

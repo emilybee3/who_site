@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+                <!-- BOOTSTRAP, CSS, FONT ADDED -->
+
+      <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+  <link rel="stylesheet" href="stylesheet.css">
+
+        
+        <title>
+           LAA
+        </title>                        
+    </head>
+
+<body>
+  <!-- <div class="tardis">
+    <img src="Static/t_closed.jpg" onmouseover="this.src='static/t_open.jpg'" onmouseout="this.src='static/t_closed.jpg'" /> -->
+
+    <div class="perspective" onclick="openDoor(this)">
+      <div class="thumb">
+      </div>
+    </div>
+
+    <nav id="nav">
+      <ul>
+        <li><strong>Home</strong></li>
+        <li><a href="podcasts.html">Podcasts</a></li>
+        <li><a href="clients.html">Our Clients</a></li>
+        <li><a href="products.html">Our Products</a></li>
+        <li><a href="services.html">Our Services</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+  </nav>
+  </div>
+
+
+<script>
+  function openDoor(field) {
+              var y = $(field).find(".thumb");
+              var x = y.attr("class");
+              if (y.hasClass("thumbOpened")) {
+                  y.removeClass("thumbOpened");
+              }
+              else {
+                  $(".thumb").removeClass("thumbOpened");
+                  y.addClass("thumbOpened");
+              }
+          }
+</script>
+
+</body> 
