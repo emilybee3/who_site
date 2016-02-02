@@ -15,39 +15,76 @@
     </head>
 
 <body>
-  <!-- <div class="tardis">
-    <img src="Static/t_closed.jpg" onmouseover="this.src='static/t_open.jpg'" onmouseout="this.src='static/t_closed.jpg'" /> -->
+  <div class="tardisMenu">
 
-    <div class="perspective" onclick="openDoor(this)">
-      <div class="thumb">
+    <div class="perspective">
+
+      <div class="tardis" id="door" onclick="openDoor(this)">
+        <div class="thumb">
+        </div>
+      </div>
+      
+      <div id="nav">
+        <nav class="navbar" hidden>
+          <ul>
+            <li><strong>Home</strong></li>
+            <li><a href="podcasts.html">Podcasts</a></li>
+            <li><a href="clients.html">Our Clients</a></li>
+            <li><a href="products.html">Our Products</a></li>
+            <li><a href="services.html">Our Services</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+          </ul>
+        </nav>
       </div>
     </div>
 
-    <nav id="nav">
-      <ul>
-        <li><strong>Home</strong></li>
-        <li><a href="podcasts.html">Podcasts</a></li>
-        <li><a href="clients.html">Our Clients</a></li>
-        <li><a href="products.html">Our Products</a></li>
-        <li><a href="services.html">Our Services</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
-  </nav>
-  </div>
-
+  </div> <!--closes tardisMenue -->
 
 <script>
+  // function closeDoor(field){
+  //    var y = $(field).find(".thumb");
+  //                 y.removeClass("thumbOpened");
+  //                 console.log("in if if");
+
+  
   function openDoor(field) {
               var y = $(field).find(".thumb");
               var x = y.attr("class");
               if (y.hasClass("thumbOpened")) {
                   y.removeClass("thumbOpened");
+                  console.log("removed thumb open");
+
               }
               else {
                   $(".thumb").removeClass("thumbOpened");
                   y.addClass("thumbOpened");
+                  setTimeout(function() {$(".navbar").show();}, 700);
+                  console.log("removed thumbOpened");
+                  console.log("navbar show");
               }
-          }
+              }
+          
+
+// $("#nav").mouseover(my1);
+
+  function my1(){
+    setTimeout(my, 500);
+  }
+
+// function my(){
+//   // evt.target.show();
+//   $(".navbar").show();
+//   console.log("in my");
+// }
+
+// $("#nav").mouseout(my2);
+
+function my2(evt){
+  $(".navbar").hide();
+}
+
 </script>
+
+
 
 </body> 

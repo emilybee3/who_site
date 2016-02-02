@@ -1,18 +1,37 @@
-.tardis {
+.tardis.perspective #door {
+    background-color: orange;
+     margin-top:180px;
+    width: 135px;
+    height: 762px;
+    position: absolute;
+    box-sizing: border-box;
+}
 
+
+.navbar {
+    /*background-color: yellow;*/
+    display: none;
+    /*z-index: 100;*/
+     /*margin-left: 70px;
+    margin-top:180px;
+    width: 135px;
+    height: 600px;*/
+    /*position: absolute;*/
+    margin-top:180px;
+    width: 135px;
+    height: 762px;
+    margin-left: 30px
 }
 
 #nav {
-    display: none;
-}
-
-.tardis:hover #nav {
-    display:block;
-    z-index: 100;
+    /*background-color: red;*/
+    width: 135px;
+    height: 600px;
 }
 
 .perspective
 {
+    background-color:blue;
 background: url("static/tardis_background.png");            
 background-repeat: no-repeat;
             background-position: center center;
@@ -27,16 +46,32 @@ background-repeat: no-repeat;
             border-radius: 3px;
             box-sizing: border-box;
         }
+
+/*.perspective {
+     margin-left: 65px;
+            margin-top:180px;
+            width: 135px;
+            height: 762px;
+            position: absolute;
+            box-sizing: border-box;
+             -webkit-perspective: 450;
+            border-radius: 3px;
+            transition: 1s transform linear;
+            transform-origin: left;
+            cursor: pointer;
+
+}*/
         
-.thumb
+.thumb /*CHANGES DIV FOR MOUSOVER OF DOOR*/
     {
-            background: url("static/door.png");
+        background-color: green;
+        background: url("static/door.png");
             background-repeat: no-repeat;
             /*background-position: center center;*/
             margin-left: 65px;
             margin-top:180px;
-            width: 403px;
-            height: 762px;
+            width: 135px;
+            height: 600px;
             position: absolute;
             box-sizing: border-box;
             /*border-radius: 3px;*/
