@@ -4,10 +4,14 @@
                 <!-- BOOTSTRAP, CSS, FONT ADDED -->
 
       <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
   <link rel="stylesheet" href="stylesheet.css">
 
+<link rel="stylesheet" href="animsition-master/src/css/animsition.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+<script src="animsition-master/src/js/animsition.js"></script>
         
         <title>
            LAA
@@ -15,36 +19,38 @@
     </head>
 
 <body>
+
   <div class="tardisMenu">
 
     <div class="perspective">
 
-      <div class="tardis" id="door" onclick="openDoor(this)">
-        <div class="thumb">
+        <div class="tardis" id="door" onclick="openDoor(this)">
+          <div class="thumb">
+          </div>
+        </div>
+        
+        <div id="nav">
+          <nav class="navbar" hidden>
+            <ul>
+              <h2>All of Time and Space Awaits</h2><br><br>
+      <div class="animsition" >
+
+                <a class="navLink animsition-link" href="podcasts.html">Episodes</a> <br><br>
+                <a class="navLink animsition-link" href="blog.html">Blog</a><br><br>
+                <a class="navLink animsition-link" href="support.html">Support Us!</a><br><br>
+      </div>
+
+            </ul>
+          </nav>
         </div>
       </div>
-      
-      <div id="nav">
-        <nav class="navbar" hidden>
-          <ul>
-            <h2>All of Time and Space Awaits</h2><br><br>
-            <a class="navLink" href="podcasts.html">Episodes</a> <br><br>
-            <a class="navLink" href="blog.html">Blog</a><br><br>
-            <a class="navLink" href="support.html">Support Us!</a><br><br>
-          </ul>
-        </nav>
-      </div>
-    </div>
+    
 
-  </div> <!--closes tardisMenue -->
+  </div> <!--closes tardisMenu -->
+
 
 <script>
-  // function closeDoor(field){
-  //    var y = $(field).find(".thumb");
-  //                 y.removeClass("thumbOpened");
-  //                 console.log("in if if");
 
-  
   function openDoor(field) {
               var y = $(field).find(".thumb");
               var x = y.attr("class");
@@ -64,48 +70,58 @@
               }
           
 
-// $("#nav").mouseover(my1);
 
-  function my1(){
-    setTimeout(my, 500);
-  }
+// function my1(){
+//     setTimeout(my, 500);
+//   }
 
-// function my(){
-//   // evt.target.show();
-//   $(".navbar").show();
-//   console.log("in my");
+
+// function my2(evt){
+//   $(".navbar").hide();
 // }
 
-// $("#nav").mouseout(my2);
 
-function my2(evt){
-  $(".navbar").hide();
-}
+  $('.navLink').hover(function(){ // or any other event
+  $(this).addClass('grow'); 
+  });
 
-  function openDoor(field) {
-              var y = $(field).find(".navLink");
-              var x = y.attr("class");
-              if (y.hasClass("thumbOpened")) {
-                  y.removeClass("thumbOpened");
-                  console.log("removed thumb open");
-                  setTimeout(function() {$(".navbar").hide();}, 100);
 
-              }
-              else {
-                  $(".thumb").removeClass("thumbOpened");
-                  y.addClass("thumbOpened");
-                  setTimeout(function() {$(".navbar").show();}, 600);
-                  console.log("removed thumbOpened");
-                  console.log("navbar show");
-              }
-              }
-$('.navLink').mouseover(function(){ // or any other event
- $(this).addClass('grow');
+
+$('.navLink').mouseout(function(){ // or any other event
+$(this).removeClass('grow');
 });
 
-// $('.navLink').mouseout(function(){ // or any other event
-//  $(this).removeClass('grow');
-// });
+
+$(document).ready(function() {
+  $(".animsition").animsition({
+    inClass: 'zoom-in',
+    outClass: 'zoom-out',
+    inDuration: 1500,
+    outDuration: 800,
+    linkElement: '.animsition-link',
+    // e.g. linkElement: 'a:not([target="_blank"]):not([href^=#])'
+    loading: true,
+    loadingParentElement: 'body', //animsition wrapper element
+    loadingClass: 'animsition-loading',
+    loadingInner: '', // e.g '<img src="loading.svg" />'
+    timeout: false,
+    timeoutCountdown: 5000,
+    onLoadEvent: true,
+    browser: [ 'animation-duration', '-webkit-animation-duration'],
+    // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+    // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+    overlay : false,
+    overlayClass : 'animsition-overlay-slide',
+    overlayParentElement : 'body',
+    transition: function(url){ window.location.href = url; }
+  });
+});
+
+$('.navLink').click(function(){ // or any other event
+  $('.tardisMenu').addClass('growTardis'); 
+  console.log("growTardis");
+  });
+
 </script>
 
 

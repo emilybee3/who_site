@@ -108,5 +108,20 @@ ul {
 }
 
 .grow {
-    font-size: 200px;
+    font-size: 65px;
+    transition: all .2s ease-in-out;
+}
+
+.animsition {
+    display:block;
+    background-color: green;
+}
+
+.growTardis{
+    -webkit-transform:scale(5);
+-moz-transform:scale(5);
+-ms-transform:scale(5);
+transform:scale(5);
+transition: all .2s ease-in-out;
+
 }
