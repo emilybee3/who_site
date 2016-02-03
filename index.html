@@ -20,6 +20,8 @@
 
 <body>
 
+<!-- <div class="animsition" > -->
+
   <div class="tardisMenu">
 
     <div class="perspective">
@@ -33,18 +35,17 @@
           <nav class="navbar" hidden>
             <ul>
               <h2>All of Time and Space Awaits</h2><br><br>
-      <div class="animsition" >
 
                 <a class="navLink animsition-link" href="podcasts.html">Episodes</a> <br><br>
                 <a class="navLink animsition-link" href="blog.html">Blog</a><br><br>
                 <a class="navLink animsition-link" href="support.html">Support Us!</a><br><br>
-      </div>
+      <!-- </div> -->
 
             </ul>
           </nav>
         </div>
       </div>
-    
+ <!-- </div>    -->
 
   </div> <!--closes tardisMenu -->
 
@@ -91,36 +92,48 @@ $('.navLink').mouseout(function(){ // or any other event
 $(this).removeClass('grow');
 });
 
+$('.navLink').click(function(event){ // or any other event
+  
+event.preventDefault();
+$('.tardisMenu').addClass('tardisDematerialize'); 
+console.log("tardisDematerialize");
+   
 
-$(document).ready(function() {
-  $(".animsition").animsition({
-    inClass: 'zoom-in',
-    outClass: 'zoom-out',
-    inDuration: 1500,
-    outDuration: 800,
-    linkElement: '.animsition-link',
-    // e.g. linkElement: 'a:not([target="_blank"]):not([href^=#])'
-    loading: true,
-    loadingParentElement: 'body', //animsition wrapper element
-    loadingClass: 'animsition-loading',
-    loadingInner: '', // e.g '<img src="loading.svg" />'
-    timeout: false,
-    timeoutCountdown: 5000,
-    onLoadEvent: true,
-    browser: [ 'animation-duration', '-webkit-animation-duration'],
-    // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
-    // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
-    overlay : false,
-    overlayClass : 'animsition-overlay-slide',
-    overlayParentElement : 'body',
-    transition: function(url){ window.location.href = url; }
-  });
+   setTimeout(function () {
+       window.location.href = "podcasts.html"; //will redirect to your blog page (an ex: blog.html)
+    }, 6000); //will call the function after 2 secs.
+
 });
 
-$('.navLink').click(function(){ // or any other event
-  $('.tardisMenu').addClass('growTardis'); 
-  console.log("growTardis");
-  });
+// $(document).ready(function() {
+
+//     $(".animsition").animsition({
+//       inClass: 'fade-in',
+//       outClass: 'fade-out',
+//       inDuration: 600,
+//       outDuration: 600,
+//       linkElement: '.animsition-link',
+//       // e.g. linkElement: 'a:not([target="_blank"]):not([href^=#])'
+//       loading: true,
+//       loadingParentElement: 'body', //animsition wrapper element
+//       loadingClass: 'animsition-loading',
+//       loadingInner: '', // e.g '<img src="loading.svg" />'
+//       timeout: false,
+//       timeoutCountdown: 5000,
+//       onLoadEvent: true,
+//       browser: [ 'animation-duration', '-webkit-animation-duration'],
+//       // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+//       // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+//       overlay : false,
+//       overlayClass : 'animsition-overlay-slide',
+//       overlayParentElement : 'body',
+//       transition: function(url){ window.location.href = url; }
+//     });
+//     console.log("for loop?");
+  
+//   });
+
+
 
 </script>
 

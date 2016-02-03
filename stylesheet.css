@@ -113,15 +113,46 @@ ul {
 }
 
 .animsition {
-    display:block;
-    background-color: green;
+    /*display:block;*/
+    /*background-color: green;*/
 }
 
-.growTardis{
+/*.growTardis{
     -webkit-transform:scale(5);
--moz-transform:scale(5);
--ms-transform:scale(5);
-transform:scale(5);
-transition: all .2s ease-in-out;
+    -moz-transform:scale(5);
+    -ms-transform:scale(5);
+    transform:scale(5);
+    transition: all .3s ease-in;
+    -ms-transform-origin: 20% 40%; /* IE 9 */
+    /*-webkit-transform-origin: 20% 40%; /* Chrome, Safari, Opera */*/
+    /*top: 50%;*/
+            /*left:17%;*/
+            /*margin-right: -10%;*/*/
 
+/*}*/
+
+@-moz-keyframes materialize {
+0% { opacity: 100%; }
+50% { opacity: 0; }
+100% { opacity: 100%; }
+}
+@-webkit-keyframes materialize {
+0% { opacity: 100%; }
+50% { opacity: 0; }
+100% { opacity: 100%; }
+}
+@keyframes materialize {
+0% { opacity: 100%; }
+50% { opacity: 0; }
+100% { opacity: 100%; }
+}
+
+
+
+.tardisDematerialize:hover {
+-moz-animation: materialize 3s 3 alternate ease-in-out;
+-webkit-animation: materialize 3s 3 alternate ease-in-out;
+animation: materialize 3s 3 alternate ease-in-out;
+/*display: block;*/
+/*margin: 0 auto;*/
 }
