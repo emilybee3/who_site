@@ -24,11 +24,13 @@ transform:scale(0.7);
     z-index: 100;
 }
 
+.navLink
 
-.navbar {
+
+nav.navbar {
     display: none;
-    top: 23.5%;
-    left:19%;
+    top: 30%;
+    left:25%;
     margin-right: -10%;
     width: 180px;
     height: 100px;
@@ -37,6 +39,11 @@ transform:scale(0.7);
 
 #nav {
     /*background-color: gray;*/
+    padding-top: 300px;
+    padding-left: 70px;
+    margin-left: 70px;
+    /*margin-right: -10%;*/
+    position:absolute;
     width: 180px;
     height: 900px;
 }
@@ -57,6 +64,7 @@ background-repeat: no-repeat;
             -webkit-perspective: 450;
             border-radius: 3px;
             box-sizing: border-box;
+            z-index: 100;
         }
 
 
@@ -99,6 +107,7 @@ h2 {
     position:center;
     text-align: center;
     font-size: 30px;
+    color:white;
 }
 
 ul {
@@ -108,8 +117,9 @@ ul {
 }
 
 .grow {
-    font-size: 65px;
+    font-size: 40px;
     transition: all .2s ease-in-out;
+    transform-origin: 10%;
 }
 
 .animsition {
@@ -117,19 +127,6 @@ ul {
     /*background-color: green;*/
 }
 
-/*.growTardis{
-    -webkit-transform:scale(5);
-    -moz-transform:scale(5);
-    -ms-transform:scale(5);
-    transform:scale(5);
-    transition: all .3s ease-in;
-    -ms-transform-origin: 20% 40%; /* IE 9 */
-    /*-webkit-transform-origin: 20% 40%; /* Chrome, Safari, Opera */*/
-    /*top: 50%;*/
-            /*left:17%;*/
-            /*margin-right: -10%;*/*/
-
-/*}*/
 
 @-moz-keyframes materialize {
 0% { opacity: 100%; }
@@ -155,4 +152,24 @@ ul {
 animation: materialize 3s 3 alternate ease-in-out;
 /*display: block;*/
 /*margin: 0 auto;*/
+}
+
+
+.controlRoom {
+    display: block;
+    background-image:url("tardi/1.png");
+    z-index: 0;
+    top: 30%;
+    left:20%;
+    margin-right: -10%;
+    width: 180px;
+    height: 643px;
+    position: absolute;
+    /*transition: all 2s ease-out;*/
+    transition-delay: 1s;
+    -webkit-transform:scale(1.4);
+-moz-transform:scale(1.4);
+-ms-transform:scale(1.4);
+transform:scale(1.4);
+    
 }
