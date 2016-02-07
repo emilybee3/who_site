@@ -5,8 +5,14 @@
 
       <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
   <link rel="stylesheet" href="stylesheet.css">
+  <link href='https://fonts.googleapis.com/css?family=Inconsolata:400,700|Amatic+SC:400,700|Special+Elite|Fredericka+the+Great|Creepster|Walter+Turncoat' rel='stylesheet' type='text/css'>
+
+  <link href='https://fonts.googleapis.com/css?family=Monofett' rel='stylesheet' type='text/css'>
 
 <link rel="stylesheet" href="animsition-master/src/css/animsition.css">
+
+<!-- Set the page to the width of the device and set the zoon level -->
+<meta name="viewport" content="width = device-width, initial-scale = 1">
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
@@ -20,148 +26,211 @@
 
 <body>
 
-<!-- <div class="animsition" > -->
-      
 
-  <div class="tardisMenu">
-    <div class="controlRoom" id="background_cycler">
-         // <script type="text/javascript">
-         //  $('#background_cycler').hide();
-         </script>
+<div class="container-fluid" overflow:hidden> 
+  <div class="page-header">
+    <h1> LAUGHING AT ARCHIOLOGISTS </h1>
+  </div> 
+  
+  <div class="row">
+  
+    <div id="rileyBrock" class="col-lg-4 col-md-4 col-sm-12">
+      <!-- <div id="riley"> -->
+        <a href="http://ryesilverman.tumblr.com/">
+          <img src="static/riley.jpg" id="rileyPic" class="img-circle">
+        </a>
+        <p>Riley Silverman is a comedian and stuff</p>
+      <!-- </div> -->
+      <!-- <div id="brock"> -->
+        <a href="http://brockwilbur.com/">
+          <img src="static/brock.jpg" id="brockPic">
+        </a>
+        <p>Brock Wilbur is a comedian and stuff</p>
+      <!-- </div>  -->
+
+    </div>
+
+  
+    <div class="tardisMenu col-lg-4 col-md-4 col-sm-12">
+      <div class="controlRoom">    
       </div>
 
 
-    <div class="perspective">
+      <div class="perspective">
 
 
-        <div class="tardis" id="door" onclick="openDoor(this)">
-          <div class="thumb">
+          <div class="tardis" id="door" onclick="openDoor(this)">
+            <div class="thumb">
 
 
+            </div>
           </div>
-        </div>
-        
-        <div id="nav">
-          <nav class="navbar" hidden>
-            <ul>
-              <h2>All of Time and Space Awaits</h2><br><br>
+            <div class="animisition" id="nav">
+              <nav class="navbar hidden">
+                <ul>
+                  <h2>All of Time and Space Awaits</h2><br><br>
 
-                <a class="navLink animsition-link" href="podcasts.html">Episodes</a> <br><br>
-                <a class="navLink animsition-link" href="blog.html">Blog</a><br><br>
-                <a class="navLink animsition-link" href="support.html">Support Us!</a><br><br>
-      <!-- </div> -->
+                    <a class="navLink" href="podcasts.html">Episodes</a> <br><br>
+                    <a class="navLink" href="blog.html">Blog</a><br><br>
+                    <a class="navLink" href="support.html">Support Us!</a><br><br>
 
-            </ul>
-          </nav>
-        </div>
-    
+                </ul>
+              </nav>
+            </div>
+        <!-- </div> -->
+      </div>
+    </div> <!--closes tardisMenu -->
+
+    <div id="turbles" class="col-lg-4 col-md-4 col-sm-12">
+        <a href="https://itunes.apple.com/us/podcast/podcast-live-from-satellite-5/id914505115?mt=2">
+          <img src="" id="turblesPic" class"img-circle">
+        </a>
+        <br><br>
+        <p>Turbles does stuff</p>
     </div>
- <!-- </div>    -->
+
+  
+  </div>
+
+  
+     
 
 
-  </div> <!--closes tardisMenu -->
 
+</div> <!-- container fluid -->
+
+  <script>
+
+      function openDoor(field) {
+                  var y = $(field).find(".thumb");
+                  var x = y.attr("class");
+                  if (y.hasClass("thumbOpened")) {
+                      y.removeClass("thumbOpened");
+                      console.log("removed thumb open");
+                      setTimeout(function() {$(".navbar").addClass("hidden");}, 150);
+
+                      var random = myImages[Math.floor(Math.random() * myImages.length)];
+            random = 'url(tardi/' + random + ')';
+            $('.controlRoom').css('background-image', random);
+
+
+                  }
+                  else {
+                      $(".thumb").removeClass("thumbOpened");
+                      y.addClass("thumbOpened");
+                      setTimeout(function() {$(".navbar").show();}, 600);
+                      console.log("removed thumbOpened");
+                      console.log("navbar show");
+                      setTimeout(function() {$(".navbar").removeClass("hidden");}, 200);
+                      console.log("removed hidden")
+
+      
+
+                  }
+                  }
+              
+
+
+
+      $('.navLink').hover(function(){ // or any other event
+      $(this).addClass('grow'); 
+      });
+
+
+
+      $('.navLink').mouseout(function(){ // or any other event
+      $(this).removeClass('grow');
+      });
+
+      $('.navLink').click(function(event){ // or any other event
+        
+      event.preventDefault();
+      $('.tardisMenu').addClass('tardisDematerialize'); 
+      console.log("tardisDematerialize");
+         
+
+         setTimeout(function () {
+             window.location.href = "podcasts.html"; //will redirect to your blog page (an ex: blog.html)
+          }, 6000); //will call the function after 2 secs.
+
+      });
+
+
+
+      var myImages = new Array("1.png", "2.png", "3.png", "4.png", "5.png");
+
+          // $(".thumb").click(function() {
+          //     var random = myImages[Math.floor(Math.random() * myImages.length)];
+          //     random = 'url(tardi/' + random + ')';
+          //     $('.controlRoom').css('background-image', random);
+
+          //     setInterval(function() {
+          //         SetImage();
+          //     }, 400);
+          // });
+
+          function SetImage() {
+              var random = myImages[Math.floor(Math.random() * myImages.length)];
+
+              random = 'url(tardi/' + random + ')';
+              $('.controlRoom').click();
+
+              // setTimeout(function () {
+              //     $('.controlRoom').css('background-image', random);
+              //     $('.controlRoom').click();
+              // }, 2000);
+          }
+
+      //      $(".thumb").click(function() {
+      //   $(".animsition").animsition({
+      //     inClass: 'zoom-in',
+      //     outClass: 'zoom-out',
+      //     inDuration: 1500,
+      //     outDuration: 800,
+      //     linkElement: '.animsition.link',
+      //     // e.g. linkElement: 'a:not([target="_blank"]):not([href^=#])'
+      //     loading: true,
+      //     loadingParentElement: 'body', //animsition wrapper element
+      //     loadingClass: 'animsition-loading',
+      //     loadingInner: '', // e.g '<img src="loading.svg" />'
+      //     timeout: false,
+      //     timeoutCountdown: 5000,
+      //     onLoadEvent: true,
+      //     browser: [ 'animation-duration', '-webkit-animation-duration'],
+      //     // "browser" option allows you to disable the "animsition" in case the css property in the array is not supported by your browser.
+      //     // The default setting is to disable the "animsition" in a browser that does not support "animation-duration".
+      //     overlay : false,
+      //     overlayClass : 'animsition-overlay-slide',
+      //     overlayParentElement : 'body',
+      //     transition: function(url){ window.location.href = url; }
+      //   });
+      // }); <!--script for tardisMenu-->
+  </script>
 
 <script>
+  var doctors = new Array("smith.png", "tennant.png", "eccelston.png");
+  $(document).ready(function() {
+            var random = doctors[Math.floor(Math.random() * doctors.length)];
+            random = '' + random + '';
+            $('#turblesPic').attr("src", random);
 
-  function openDoor(field) {
-              var y = $(field).find(".thumb");
-              var x = y.attr("class");
-              if (y.hasClass("thumbOpened")) {
-                  y.removeClass("thumbOpened");
-                  console.log("removed thumb open");
-                  setTimeout(function() {$(".navbar").hide();}, 100);
-                  var random = myImages[Math.floor(Math.random() * myImages.length)];
-        random = 'url(tardi/' + random + ')';
-        $('.controlRoom').css('background-image', random);
+            // setInterval(function() {
+            //     SetImage();
+            // }, 400);
+        });
 
+        function SetImage() {
+            var random = myImages[Math.floor(Math.random() * myImages.length)];
 
-              }
-              else {
-                  $(".thumb").removeClass("thumbOpened");
-                  y.addClass("thumbOpened");
-                  setTimeout(function() {$(".navbar").show();}, 600);
-                  console.log("removed thumbOpened");
-                  console.log("navbar show");
+            random = '' + random + '';
+            $('.turblesPic').load();
 
- 
-        
-
-        // setInterval(function() {
-        //     SetImage();
-        // }, 400);
-    
-                  
-
-              }
-              }
-          
-
-
-// function my1(){
-//     setTimeout(my, 500);
-//   }
-
-
-// function my2(evt){
-//   $(".navbar").hide();
-// }
-
-
-  $('.navLink').hover(function(){ // or any other event
-  $(this).addClass('grow'); 
-  });
-
-
-
-$('.navLink').mouseout(function(){ // or any other event
-$(this).removeClass('grow');
-});
-
-$('.navLink').click(function(event){ // or any other event
-  
-event.preventDefault();
-$('.tardisMenu').addClass('tardisDematerialize'); 
-console.log("tardisDematerialize");
-   
-
-   setTimeout(function () {
-       window.location.href = "podcasts.html"; //will redirect to your blog page (an ex: blog.html)
-    }, 6000); //will call the function after 2 secs.
-
-});
-
-
-
-var myImages = new Array("1.png", "2.png", "3.png", "4.png", "5.png");
-
-    // $(".thumb").click(function() {
-    //     var random = myImages[Math.floor(Math.random() * myImages.length)];
-    //     random = 'url(tardi/' + random + ')';
-    //     $('.controlRoom').css('background-image', random);
-
-    //     setInterval(function() {
-    //         SetImage();
-    //     }, 400);
-    // });
-
-    function SetImage() {
-        var random = myImages[Math.floor(Math.random() * myImages.length)];
-
-        random = 'url(tardi/' + random + ')';
-        $('.controlRoom').click();
-
-        // setTimeout(function () {
-        //     $('.controlRoom').css('background-image', random);
-        //     $('.controlRoom').click();
-        // }, 2000);
-    }
+            // setTimeout(function () {
+            //     $('.controlRoom').css('background-image', random);
+            //     $('.controlRoom').click();
+            // }, 2000);
+        }
 </script>
-
-
-
-
-
 
 
 </body> 
