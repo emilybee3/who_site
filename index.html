@@ -30,55 +30,41 @@
 <div class="container-fluid" overflow:hidden> 
   <div class="page-header">
     <h1> LAUGHING AT ARCHIOLOGISTS </h1>
-  </div> 
+  </div> <!-- closes page-header -->
   
   <div class="row">
   
     <div id="rileyBrock" class="col-lg-4 col-md-4 col-sm-12">
-      <!-- <div id="riley"> -->
         <a href="http://ryesilverman.tumblr.com/">
           <img src="static/riley.jpg" id="rileyPic" class="img-circle">
         </a>
         <p>Riley Silverman is a comedian and stuff</p>
-      <!-- </div> -->
-      <!-- <div id="brock"> -->
         <a href="http://brockwilbur.com/">
           <img src="static/brock.jpg" id="brockPic">
         </a>
         <p>Brock Wilbur is a comedian and stuff</p>
-      <!-- </div>  -->
-
-    </div>
+    </div> <!-- closes rileyBrock -->
 
   
     <div class="tardisMenu col-lg-4 col-md-4 col-sm-12">
       <div class="controlRoom">    
-      </div>
-
-
-      <div class="perspective">
-
-
+        <div class="perspective">
           <div class="tardis" id="door" onclick="openDoor(this)">
             <div class="thumb">
-
-
-            </div>
-          </div>
+            </div> <!-- closes thumb div -->
+          </div> <!--closes door div -->
             <div class="animisition" id="nav">
               <nav class="navbar hidden">
                 <ul>
                   <h2>All of Time and Space Awaits</h2><br><br>
-
                     <a class="navLink" href="podcasts.html">Episodes</a> <br><br>
                     <a class="navLink" href="blog.html">Blog</a><br><br>
                     <a class="navLink" href="support.html">Support Us!</a><br><br>
-
                 </ul>
               </nav>
-            </div>
-        <!-- </div> -->
-      </div>
+            </div> <!-- closes nav -->
+        </div> <!--closes perspective-->
+      </div> <!--closes controlRoom -->
     </div> <!--closes tardisMenu -->
 
     <div id="turbles" class="col-lg-4 col-md-4 col-sm-12">
@@ -87,19 +73,12 @@
         </a>
         <br><br>
         <p>Turbles does stuff</p>
-    </div>
+    </div> <!--closes turbles -->
 
-  
-  </div>
-
-  
-     
-
-
-
+  </div> <!--closes row -->
 </div> <!-- container fluid -->
 
-  <script>
+<script>
 
       function openDoor(field) {
                   var y = $(field).find(".thumb");
@@ -205,7 +184,7 @@
       //     transition: function(url){ window.location.href = url; }
       //   });
       // }); <!--script for tardisMenu-->
-  </script>
+</script>
 
 <script>
   var doctors = new Array("smith.png", "tennant.png", "eccelston.png");
